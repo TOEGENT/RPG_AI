@@ -83,4 +83,5 @@ while True:
     if action == 0:
         print("Вы проиграли!")
     else:
+        print("Вы победили!")
         action = action.process_input()
