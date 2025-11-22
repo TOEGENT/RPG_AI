@@ -6,10 +6,11 @@ def safe_input(string="", expect_type=str, filter=lambda x: x):
     is_regex = isinstance(expect_type, re.Pattern)
 
     # нормализация новых вариантов
-    multi_type = expect_type if isinstance(expect_type, (tuple, list)) else (expect_type,)
-    multi_filter = (
-        filter if isinstance(filter, (tuple, list)) else (filter,)
+    multi_type = (
+        expect_type if isinstance(expect_type,
+                                  (tuple, list)) else (expect_type,)
     )
+    multi_filter = filter if isinstance(filter, (tuple, list)) else (filter,)
 
     while True:
         raw = input(string)
